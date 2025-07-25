@@ -273,20 +273,16 @@
         document.addEventListener('DOMContentLoaded', function() {
             var navLinks = document.querySelectorAll('.nav-link');
             
-            // Add click event to each nav link
             for (var i = 0; i < navLinks.length; i++) {
                 navLinks[i].addEventListener('click', function(e) {
                     e.preventDefault();
                     
-                    // Remove active class from all links
                     for (var j = 0; j < navLinks.length; j++) {
                         navLinks[j].classList.remove('active');
                     }
                     
-                    // Add active class to clicked link
                     this.classList.add('active');
-                    
-                    // Get target section and scroll to it
+
                     var targetId = this.getAttribute('href').substring(1);
                     var targetSection = document.getElementById(targetId);
                     
