@@ -196,6 +196,35 @@
                 align-items: flex-start;
             }
         }
+
+        /* About section: text + image side-by-side */
+        .about {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr; /* text a bit wider */
+        gap: 2rem;
+        align-items: center;
+        }
+
+        .about-hero img {
+        width: 100%;
+        max-width: 420px;   /* keep it from getting huge */
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        display: block;
+        }
+
+        /* Stack on mobile */
+        @media (max-width: 900px) {
+        .about {
+            grid-template-columns: 1fr;
+        }
+        .about-hero {
+            margin-top: 1rem;
+            justify-self: center; /* center the image when stacked */
+        }
+        }
+
     </style>
 </head>
 <body>
@@ -212,7 +241,9 @@
     </nav>
 
     <section id="about" class="section">
-        <h1>Hi, I'm Trisha 👋</h1>
+    <div class="about">
+    <div class="about-text">
+        <h1>👋 Hi, I'm Trisha </h1>
         <p>I'm a 3rd year computer science student @UDub. </p>
         <h2 style="font-size:1.75rem; margin:1rem 0;">
             Here's my <a href="https://github.com/tbhatawdekar" target="_blank" rel="noopener">GitHub Profile</a>!
@@ -223,12 +254,18 @@
             <a href="#" class="social-link">Email</a>
         </div>
         <div>
-            <h3>Here are some of the courses I've taken so far: </h3>
+            <h3>🤓 Here are some of the courses I've taken so far: </h3>
                 <p> Foundations of Computing 1 (CSE 311), Foundations of Computing 2 (CSE 312),
-                    Data Structures & Parallelism(CSE 332), Software Design & Implementation (CSE 331),
+                    Data Structures & Parallelism (CSE 332), Software Design & Implementation (CSE 331),
                      Hardware/Software Interface (CSE 351), Systems Programming (CSE 333), Algorithms (CSE 421),
                      Computer Security (CSE 484), Linear Algebra (Math 208)
                 </p>
+        </div>
+        </div>
+
+            <div class="about-hero">
+                <img src="/assets/computer_kitty.jpeg" alt="Trisha coding cat doodle" loading="lazy">
+            </div>
         </div>
     </section>
 
